@@ -1,0 +1,38 @@
+﻿<Window x:Class="GoFish.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoFish"
+        mc:Ignorable="d"
+        Title="GoFish" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="firstGrid"  Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center"  >
+            <Slider x:Name="NumberOfPlayers" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Minimum="2" Maximum="5" SmallChange="1" Cursor="Arrow" AutoToolTipPlacement="TopLeft" Value="1"/>
+            <Button Content="START" Margin="0,23,0,-23" Click="StartGameButton_Click"/>
+            <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Number of players" VerticalAlignment="Top" Margin="0,-21,0,0"/>
+        </Grid>
+        <Grid x:Name="secondGrid" Visibility="Collapsed" Grid.ColumnSpan="2" Grid.RowSpan="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="GameProgressListBox" Grid.Column="0" Grid.Row="1" Grid.RowSpan="1" Margin="20,0,20,0"/>
+            <ListBox x:Name="YourHandListBox" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="20,0,20,0"/>
+            <ListBox x:Name="ScoreListBox" Grid.Column="0" Grid.Row="3" Grid.RowSpan="2" Margin="20,0,20,10"/>
+            <Button x:Name="AskAPlayer" Grid.Column="1" Content="Ask for a card" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="40" Width="146" Click="Ask"/>
+            <Button x:Name="BackToMainMenu" Visibility="Collapsed" Grid.Column="1" Content="Back to main menu" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="40" Width="146" Click="Button_Click"/>
+            <ComboBox x:Name="PlayersList" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="120"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Row="0" TextWrapping="Wrap" Text="Game progress" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontStyle="Italic" />
+            <TextBlock HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="Score" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontStyle="Italic" />
+            <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="Your hand" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontStyle="Italic" />
+        </Grid>
+    </Grid>
+</Window>
